@@ -7,9 +7,14 @@
   },
   "dependencies": {
     "@sanity/client": "^3.3.0",
+    "moralis": "^1.5.11",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-moralis": "^1.3.5",
+    "react-simple-hook-modal": "^1.1.0",
+    "react-spinners": "^0.11.0"
   },
   "devDependencies": {
     "@types/node": "17.0.4",
