@@ -5,7 +5,7 @@ import { FaBox } from 'react-icons/fa'
 import { BsFillBookmarkFill } from 'react-icons/bs'
 import { BsFillPersonFill } from 'react-icons/bs'
 //import { AmazonContext } from '../context/AmazonContext'
-//import { ConnectButton } from 'web3uikit'
+import { ConnectButton } from 'web3uikit'
 import { AiOutlineHistory } from 'react-icons/ai'
 import Link from 'next/link'
 
@@ -26,7 +26,13 @@ const styles = {
 }
 
 const Sidebar = () => {
-  return <div className={styles.container}>Sidebar</div>
+  return (
+    <div className={styles.container}>
+      <div className={styles.connectButton}>
+        <ConnectButton />
+      </div>
+    </div>
+  )
 }
 
 export default Sidebar
