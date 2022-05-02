@@ -32,7 +32,7 @@ const Sidebar = () => {
     nickname,
     setNickname,
     username,
-    handlesetUsername,
+    handleSetUsername,
   } = useContext(AmazonContext)
 
   return (
@@ -41,7 +41,7 @@ const Sidebar = () => {
         {isAuthenticated && (
           <>
             <div className={styles.profilePicContainer}></div>
-            {username ? (
+            {!username ? (
               <>
                 <div className={styles.username}>
                   <input
@@ -54,14 +54,14 @@ const Sidebar = () => {
                 </div>
                 <button
                   className={styles.setNickname}
-                  onClick={handlesetUsername}
+                  onClick={handleSetUsername}
                 >
                   Set Nickname
                 </button>
               </>
             ) : (
               <div>
-                <div className={styles.welcome}>Welcome {username}</div>
+                <div className={styles.welcome}>Wecome {username}</div>
               </div>
             )}
           </>
@@ -98,7 +98,7 @@ const Sidebar = () => {
         <Link href="/history">
           <div className={styles.menuItem}>
             <AiOutlineHistory />
-            History
+            Transaction History
           </div>
         </Link>
       </div>

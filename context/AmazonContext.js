@@ -37,17 +37,17 @@ export const AmazonProvider = ({ children }) => {
     })()
   }, [isAuthenticated, user, username])
 
-  const handlesetUsername = () => {
+  const handleSetUsername = () => {
     if (user) {
       if (nickname) {
         user.set('nickname', nickname)
         user.save()
         setNickname('')
       } else {
-        alert('Please enter a username, cannot be empty')
+        alert('Please enter a nickname, cannot be empty')
       }
     } else {
-      console.log('no user')
+      console.log('No user')
     }
   }
 
@@ -58,7 +58,7 @@ export const AmazonProvider = ({ children }) => {
         nickname,
         setNickname,
         username,
-        handlesetUsername,
+        handleSetUsername,
       }}
     >
       {children}
