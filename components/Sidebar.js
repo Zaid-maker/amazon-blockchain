@@ -25,11 +25,44 @@ const styles = {
   setNickname: `text-lg font-bold flex flex-1 items-center mt-[20px] mb-[20px] text-white`,
 }
 
+const isAuthenticated = false
+const username = 'DevMirza'
+
 const Sidebar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.connectButton}>
-        <ConnectButton />
+      <div className={styles.profile}>
+        {isAuthenticated && (
+          <>
+            <div className={styles.profilePicContainer}>
+              <Image
+                alt="profile"
+                className={styles.profilePic}
+                height={100}
+                width={100}
+              />
+            </div>
+            {username ? (
+              <>
+                <div className={styles.username}>
+                  <input
+                    type="text"
+                    placeholder="Username...."
+                    className={styles.usernameInput}
+                  />
+                </div>
+                <button className={styles.setNickname}>Set Nickname</button>
+              </>
+            ) : (
+              <div>
+                <div className={styles.username}>Welcome {username}</div>
+              </div>
+            )}
+          </>
+        )}
+        <div className={styles.connectButton}>
+          <ConnectButton />
+        </div>
       </div>
     </div>
   )
