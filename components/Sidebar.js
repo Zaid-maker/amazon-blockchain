@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { FaBox } from 'react-icons/fa'
 import { BsFillBookmarkFill } from 'react-icons/bs'
 import { BsFillPersonFill } from 'react-icons/bs'
-//import { AmazonContext } from '../context/AmazonContext'
+import { AmazonContext } from '../context/AmazonContext'
 import { ConnectButton } from 'web3uikit'
 import { AiOutlineHistory } from 'react-icons/ai'
 import Link from 'next/link'
@@ -26,23 +26,21 @@ const styles = {
   setNickname: `text-lg font-bold flex flex-1 items-center mt-[20px] mb-[20px] text-white`,
 }
 
-const isAuthenticated = false
-const username = 'DevMirza'
-
 const Sidebar = () => {
+  const {
+    isAuthenticated,
+    nickname,
+    setNickname,
+    username,
+    handlesetUsername,
+  } = useContext(AmazonContext)
+
   return (
     <div className={styles.container}>
       <div className={styles.profile}>
         {isAuthenticated && (
           <>
-            <div className={styles.profilePicContainer}>
-              <Image
-                alt="profile"
-                className={styles.profilePic}
-                height={100}
-                width={100}
-              />
-            </div>
+            <div className={styles.profilePicContainer}></div>
             {username ? (
               <>
                 <div className={styles.username}>
@@ -50,13 +48,20 @@ const Sidebar = () => {
                     type="text"
                     placeholder="Username...."
                     className={styles.usernameInput}
+                    value={nickname}
+                    onChange={(e) => setNickname(e.target.value)}
                   />
                 </div>
-                <button className={styles.setNickname}>Set Nickname</button>
+                <button
+                  className={styles.setNickname}
+                  onClick={handlesetUsername}
+                >
+                  Set Nickname
+                </button>
               </>
             ) : (
               <div>
-                <div className={styles.username}>Welcome {username}</div>
+                <div className={styles.welcome}>Welcome {username}</div>
               </div>
             )}
           </>
