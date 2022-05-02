@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-//import logoFull from '../assets/amazon_logo_full.png'
+import logo from '../assets/amazon_logo.png'
+import logoFull from '../assets/amazon_logo_full.png'
 import Image from 'next/image'
 import { FaBox } from 'react-icons/fa'
 import { BsFillBookmarkFill } from 'react-icons/bs'
@@ -63,6 +64,41 @@ const Sidebar = () => {
         <div className={styles.connectButton}>
           <ConnectButton />
         </div>
+      </div>
+      <div className={styles.menu}>
+        <Link href="/">
+          <div className={styles.menuItem}>
+            <Image
+              src={logo}
+              height={30}
+              width={30}
+              className={styles.amazonLogo}
+            />
+            My Amazon
+            <br /> Board
+          </div>
+        </Link>
+        <div className={styles.menuItem}>
+          <FaBox />
+          Collections
+        </div>
+        <div className={styles.menuItem}>
+          <BsFillBookmarkFill />
+          Saved
+        </div>
+        <div className={styles.menuItem}>
+          <BsFillPersonFill />
+          Profile
+        </div>
+        <Link href="/history">
+          <div className={styles.menuItem}>
+            <AiOutlineHistory />
+            History
+          </div>
+        </Link>
+      </div>
+      <div className={styles.companyName}>
+        <Image src={logoFull} alt="amazon" height={100} width={100} />
       </div>
     </div>
   )
