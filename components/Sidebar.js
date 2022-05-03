@@ -61,7 +61,7 @@ const Sidebar = () => {
               </>
             ) : (
               <div>
-                <div className={styles.welcome}>Wecome {username}</div>
+                <div className={styles.welcome}>Welcome {username}</div>
               </div>
             )}
           </>
