@@ -5825,10 +5825,10 @@ web3-utils@1.7.3, web3-utils@^1.7.0:
     randombytes "^2.1.0"
     utf8 "3.0.0"
 
-web3uikit@^0.1.137:
-  version "0.1.137"
-  resolved "https://registry.yarnpkg.com/web3uikit/-/web3uikit-0.1.137.tgz#ca9de54a694fa3781e80c66bc0d11d876a87f593"
-  integrity sha512-kD9cfjvf4BmpA70pNK6MqHuyY5Qqrjs001nZmCOEWQlxDIkDtf6UQKp+lHqXe99r40azpfVTjefC7dP2Rzpa4A==
+web3uikit@^0.1.138:
+  version "0.1.138"
+  resolved "https://registry.yarnpkg.com/web3uikit/-/web3uikit-0.1.138.tgz#d8540d4c871fb99efe82318ddded3c454158295f"
+  integrity sha512-ahubKz+sQ/fCk/SpOLXDF6+f7unr9aLLxC+7Q6Q5f9XglnR117WWxpHbuz1+PSTukUvTg9bd9SOylX2JU3T5zg==
   dependencies:
     "@storybook/theming" "^6.4.21"
     "@walletconnect/web3-provider" "^1.7.1"
