@@ -11,8 +11,12 @@ const styles = {
   coins: `ml-[10px]`,
 }
 
-const Card = () => {
-  return <div>Card</div>
+const Card = ({ item }) => {
+  return (
+    <div className={styles.cardContainer}>
+      <div className={styles.card}></div>
+    </div>
+  )
 }
 
 export default Card
