@@ -14,7 +14,14 @@ const styles = {
 const Card = ({ item }) => {
   return (
     <div className={styles.cardContainer}>
-      <div className={styles.card}></div>
+      <div className={styles.card}>
+        {/*<Image
+          src={item.src}
+          className="object-cover object-center"
+          width={190}
+          height={250}
+        /> */}
+      </div>
     </div>
   )
 }
