@@ -1,10 +1,10 @@
-import Head from "next/head";
-import Main from "../components/Main";
-import SideBar from "../components/SideBar";
+import Head from 'next/head'
+import Main from '../components/Main'
+import SideBar from '../components/SideBar'
 
 const styles = {
   container: `h-full w-full flex bg-[#fff]`,
-};
+}
 
 export default function Home() {
   return (
@@ -18,5 +18,5 @@ export default function Home() {
       <SideBar />
       <Main />
     </div>
-  );
+  )
 }

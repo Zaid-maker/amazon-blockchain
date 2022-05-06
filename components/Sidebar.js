@@ -40,7 +40,15 @@ const Sidebar = () => {
       <div className={styles.profile}>
         {isAuthenticated && (
           <>
-            <div className={styles.profilePicContainer}></div>
+            <div className={styles.profilePicContainer}>
+              <Image
+                src={`https://avatars.dicebear.com/api/pixel-art/${username}.svg`}
+                alt="profile"
+                className={styles.profilePic}
+                height={100}
+                width={100}
+              />
+            </div>
             {!username ? (
               <>
                 <div className={styles.username}>
