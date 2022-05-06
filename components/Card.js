@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
-import { FaCoins } from 'react-icons/fa'
-import { AmazonContext } from '../context/AmazonContext'
-import Image from 'next/image'
+import React, { useContext } from "react";
+import { FaCoins } from "react-icons/fa";
+import { AmazonContext } from "../context/AmazonContext";
+import Image from "next/image";
 
 const styles = {
   cardContainer: `flex flex-col`,
@@ -9,21 +9,22 @@ const styles = {
   cardTitle: `text-xl font-bold flex text-center w-full flex-1 justify-center mt-[10px]`,
   price: `text-md font-bold flex justify-center`,
   coins: `ml-[10px]`,
-}
+};
 
 const Card = ({ item }) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.card}>
-        {/*<Image
+        <Image
           src={item.src}
+          alt="images src"
           className="object-cover object-center"
           width={190}
           height={250}
-        /> */}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
