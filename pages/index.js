@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Main from '../components/Main'
-import SideBar from '../components/SideBar'
+import Sidebar from '../components/Sidebar'
 
 const styles = {
   container: `h-full w-full flex bg-[#fff]`,
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SideBar />
+      <Sidebar />
       <Main />
     </div>
   )
