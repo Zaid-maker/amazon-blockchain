@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { FaCoins } from "react-icons/fa";
-import { AmazonContext } from "../context/AmazonContext";
-import Image from "next/image";
+import React, { useContext } from 'react'
+import { FaCoins } from 'react-icons/fa'
+import { AmazonContext } from '../context/AmazonContext'
+import Image from 'next/image'
 
 const styles = {
   cardContainer: `flex flex-col`,
@@ -9,7 +9,7 @@ const styles = {
   cardTitle: `text-xl font-bold flex text-center w-full flex-1 justify-center mt-[10px]`,
   price: `text-md font-bold flex justify-center`,
   coins: `ml-[10px]`,
-};
+}
 
 const Card = ({ item }) => {
   return (
@@ -24,7 +24,7 @@ const Card = ({ item }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card
