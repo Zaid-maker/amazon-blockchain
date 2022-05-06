@@ -5,8 +5,8 @@ import { AmazonProvider } from "../context/AmazonContext";
 function MyApp({ Component, pageProps }) {
   return (
     <MoralisProvider
-      appId="hWKs6uoexB2oa1i2dyd39PpEMGPKcPv4n4QJtxIN"
-      serverUrl="https://t1zjikvshoiq.usemoralis.com:2053/server"
+      serverUrl={process.env.NEXT_PUBLIC_MORALIS_SERVER}
+      appId={process.env.NEXT_PUBLIC_MORALIS_APP_ID}
     >
       <AmazonProvider>
         <Component {...pageProps} />
