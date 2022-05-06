@@ -75,6 +75,7 @@ const Sidebar = () => {
           <div className={styles.menuItem}>
             <Image
               src={logo}
+              alt="src"
               height={30}
               width={30}
               className={styles.amazonLogo}
