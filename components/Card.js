@@ -24,7 +24,7 @@ const Card = ({ item }) => {
         />
       </div>
       <div>
-        <div className={styles.cardTitle}>{item.title}</div>
+        <div className={styles.cardTitle}>{item.name}</div>
         <div className={styles.price}>
           {item.price} AC <FaCoins className={styles.coins} />
         </div>
