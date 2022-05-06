@@ -21,7 +21,7 @@ const Cards = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>New Release's</div>
+      <div className={styles.title}>New Release</div>
       <div className={styles.cards}>
         <Card key={item.id} item={item.attributes} />
       </div>
