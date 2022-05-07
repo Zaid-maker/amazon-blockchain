@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useState, useEffect } from 'react'
 import { useMoralis, useMoralisQuery } from 'react-moralis'
 //import { amazonAbi, amazonCoinAddress } from '../lib/constants'
@@ -28,6 +29,12 @@ export const AmazonProvider = ({ children }) => {
     isWeb3Enabled,
   } = useMoralis()
 
+  const {
+    data: assetsData,
+    error: assetsDataError,
+    isLoading: assetsDataIsLoading,
+  } = useMoralisQuery('assets')
+
   useEffect(() => {
     ;(async () => {
       if (!isAuthenticated) {
@@ -36,6 +43,14 @@ export const AmazonProvider = ({ children }) => {
       }
     })()
   }, [isAuthenticated, user, username])
+
+  useEffect(() => {
+    ;(async () => {
+      if (isWeb3Enabled) {
+        await getAssets()
+      }
+    })()
+  }, [isWeb3Enabled, assetsData, assetsDataIsLoading])
 
   const handleSetUsername = () => {
     if (user) {
@@ -51,6 +66,16 @@ export const AmazonProvider = ({ children }) => {
     }
   }
 
+  const getAssets = async () => {
+    try {
+      await enableWeb3()
+
+      setAssets(assetsData)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <AmazonContext.Provider
       value={{
@@ -59,6 +84,7 @@ export const AmazonProvider = ({ children }) => {
         setNickname,
         username,
         handleSetUsername,
+        assets,
       }}
     >
       {children}
