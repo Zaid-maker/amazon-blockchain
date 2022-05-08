@@ -1,22 +1,16 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-import "hardhat/console.sol";
+import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
+import '@openzeppelin/contracts/access/Ownable.sol';
 
-contract Greeter {
-    string private greeting;
+contract AmazonCoin is ERC20, Ownable {
+    constructor() ERC20('Amazon Coin', 'AC') {}
 
-    constructor(string memory _greeting) {
-        console.log("Deploying a Greeter with greeting:", _greeting);
-        greeting = _greeting;
+    function mint(uint256 amount) public payable {
+        require(msg.value == amount * 0.0001 ether, 'Invalid amount of ether');
+        _mint(msg.sender, amount);
     }
-
-    function greet() public view returns (string memory) {
-        return greeting;
-    }
-
-    function setGreeting(string memory _greeting) public {
-        console.log("Changing greeting from '%s' to '%s'", greeting, _greeting);
-        greeting = _greeting;
-    }
+    receive() external payable{}
+    fallback() external payable()
 }

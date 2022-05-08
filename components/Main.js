@@ -16,7 +16,7 @@ const Main = () => {
   return (
     <div className={styles.container}>
       <Header />
-      <Featured />
+      {/* <Featured /> */}
       <Cards />
     </div>
   )
