@@ -24,9 +24,8 @@ const styles = {
   coins: `ml-[10px]`,
 }
 
-const balance = false
-
 const Header = () => {
+  const { balance, buyTokens, getBalance } = useContext(AmazonContext)
   const { openModal, isModalOpen, closeModal } = useModal()
 
   return (
