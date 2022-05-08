@@ -36,10 +36,9 @@ const Header = () => {
           <Image
             src={logo}
             alt="amazon"
-            width={150}
             height={100}
+            width={150}
             className="object-cover"
-            priority
           />
         </div>
         <div className={styles.search}>
@@ -75,6 +74,7 @@ const Header = () => {
               </Modal>
             </div>
           )}
+          <CgMenuGridO fontSize={30} className={styles.menuItem} />
         </div>
       </div>
     </ModalProvider>
