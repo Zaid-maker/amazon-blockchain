@@ -72,10 +72,9 @@ export const AmazonProvider = ({ children }) => {
   const getBalance = async () => {
     try {
       if (!isAuthenticated || !currentAccount) return
-
       const options = {
         contractAddress: amazonCoinAddress,
-        function: 'balanceOf',
+        functionName: 'balanceOf',
         abi: amazonAbi,
         params: {
           account: currentAccount,
