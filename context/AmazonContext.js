@@ -35,6 +35,12 @@ export const AmazonProvider = ({ children }) => {
     isLoading: assetsDataIsLoading,
   } = useMoralisQuery('assets')
 
+  const {
+    data: userData,
+    error: userDataError,
+    isLoading: userDataIsLoading,
+  } = useMoralisQuery('_User')
+
   useEffect(() => {
     ;(async () => {
       if (!isAuthenticated) {
@@ -53,7 +59,7 @@ export const AmazonProvider = ({ children }) => {
         await getAssets()
       }
     })()
-  }, [isWeb3Enabled, assetsData, assetsDataIsLoading])
+  }, [isWeb3Enabled, assetsData, assetsDataIsLoading, userDataIsLoading])
 
   const handleSetUsername = () => {
     if (user) {
@@ -85,6 +91,36 @@ export const AmazonProvider = ({ children }) => {
         const response = await Moralis.executeFunction(options)
         console.log(response.toString())
         setBalance(response.toString())
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const buyAsset = async (price, asset) => {
+    try {
+      if (!isAuthenticated) return
+
+      const options = {
+        type: 'erc20',
+        amount: price,
+        reciever: amazonCoinAddress,
+        contractAddress: amazonCoinAddress,
+      }
+
+      let transaction = await Moralis.transfer(options)
+      const receipt = await transaction.wait()
+
+      if (receipt) {
+        const res = userData[0].add('ownedAsset', {
+          ...asset,
+          purchaseDate: Date.now(),
+          etherscanLink: `https://rinkeby.etherscan.io/tx/${receipt.transactionHash}`,
+        })
+
+        await res.save().then(() => {
+          alert('You have successfully purchased this asset')
+        })
       }
     } catch (error) {
       console.log(error)
@@ -151,6 +187,7 @@ export const AmazonProvider = ({ children }) => {
         setEtherscanLink,
         currentAccount,
         buyTokens,
+        buyAsset,
       }}
     >
       {children}
