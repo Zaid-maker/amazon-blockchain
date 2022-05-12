@@ -100,11 +100,14 @@ export const AmazonProvider = ({ children }) => {
   const buyAsset = async (price, asset) => {
     try {
       if (!isAuthenticated) return
+      console.log('price: ', price)
+      console.log('asset: ', asset.name)
+      console.log(userData)
 
       const options = {
         type: 'erc20',
         amount: price,
-        reciever: amazonCoinAddress,
+        receiver: amazonCoinAddress,
         contractAddress: amazonCoinAddress,
       }
 
@@ -119,11 +122,11 @@ export const AmazonProvider = ({ children }) => {
         })
 
         await res.save().then(() => {
-          alert('You have successfully purchased this asset')
+          alert("You've successfully purchased this asset!")
         })
       }
     } catch (error) {
-      console.log(error)
+      console.log(error.message)
     }
   }
 

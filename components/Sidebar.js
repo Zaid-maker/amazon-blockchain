@@ -29,6 +29,8 @@ const styles = {
 const Sidebar = () => {
   const {
     isAuthenticated,
+    buyTokens,
+    getBalance,
     nickname,
     setNickname,
     username,
@@ -83,7 +85,7 @@ const Sidebar = () => {
           <div className={styles.menuItem}>
             <Image
               src={logo}
-              alt="src"
+              alt="logo"
               height={30}
               width={30}
               className={styles.amazonLogo}
@@ -112,7 +114,7 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className={styles.companyName}>
-        <Image src={logoFull} alt="amazon" height={100} width={100} priority />
+        <Image src={logoFull} alt="amazon" height={100} width={100} />
       </div>
     </div>
   )
