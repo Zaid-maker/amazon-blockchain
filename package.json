@@ -27,7 +27,7 @@
     "web3uikit": "^0.1.140"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.13",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.13",
